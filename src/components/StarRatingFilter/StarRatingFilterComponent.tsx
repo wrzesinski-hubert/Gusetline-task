@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./style.css";
 
-const StarRatingFilter = (props: { setRatingFilter: any }) => {
+const StarRatingFilter = (props: {
+  setRatingFilter: (index: number) => void;
+}) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   return (

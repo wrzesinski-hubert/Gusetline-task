@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./style.css";
 const PicturesGallery = (props: { images: { url: string }[] }) => {
   const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
