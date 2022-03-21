@@ -12,18 +12,19 @@ const App = () => {
   const [adultsAmount, setAdultsAmount] = useState(0);
   const [childrenAmount, setChildrenAmount] = useState(0);
 
+  const fetchData = async () => {
+    const hotels = await fetchHotels();
+    const hotelIds = hotels.map(({ id }: { id: string }) => ({ id }));
+    const rooms = await fetchRooms(hotelIds);
+    let a: roomsDataType[] = [];
+    hotelIds.map((item: { id: string }, index: number) =>
+      a.push({ [item.id]: rooms[index] })
+    );
+    setHotelData(hotels);
+    setRoomsData(a);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const hotels = await fetchHotels();
-      const hotelIds = hotels.map(({ id }: { id: string }) => ({ id }));
-      const rooms = await fetchRooms(hotelIds);
-      let a: roomsDataType[] = [];
-      hotelIds.map((item: { id: string }, index: number) =>
-        a.push({ [item.id]: rooms[index] })
-      );
-      setHotelData(hotels);
-      setRoomsData(a);
-    };
     fetchData();
   }, []);
 

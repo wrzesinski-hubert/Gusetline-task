@@ -20,4 +20,5 @@ type singleRoomType = {
     country: string;
     starRating: string;
     images: { url: string }[];
+    rooms: roomsDataType[];
   };
