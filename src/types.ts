@@ -2,6 +2,7 @@ type singleRoomType = {
     name: string;
     occupancy: { maxAdults: number; maxChildren: number; maxOverall: number };
     longDescription: string;
+    id:string;
   }[];
   
   export type roomsDataType = {

@@ -26,6 +26,7 @@ const HotelsList = (props: {
         )
           return (
             <SingleHotel
+              key={id}
               hotel={hotel}
               rooms={rooms}
               starRating={starRating}

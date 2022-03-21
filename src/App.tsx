@@ -16,12 +16,13 @@ const App = () => {
     const hotels = await fetchHotels();
     const hotelIds = hotels.map(({ id }: { id: string }) => ({ id }));
     const rooms = await fetchRooms(hotelIds);
-    let a: roomsDataType[] = [];
-    hotelIds.map((item: { id: string }, index: number) =>
-      a.push({ [item.id]: rooms[index] })
+    const roomsAndHotelIds = hotelIds.map(
+      (item: { id: string }, index: number) => ({
+        [item.id]: rooms[index],
+      })
     );
     setHotelData(hotels);
-    setRoomsData(a);
+    setRoomsData(roomsAndHotelIds);
   };
 
   useEffect(() => {

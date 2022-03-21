@@ -6,11 +6,11 @@ const StarRating = (props: {
     <>
       {[...Array(props.numberOfFillStars)].map((star, index) => {
         index += 1;
-        return <span>&#9733;</span>;
+        return <span key={index}>&#9733;</span>;
       })}
       {[...Array(props.numberOfEmptyStars)].map((star, index) => {
         index += 1;
-        return <span>&#9734;</span>;
+        return <span key={index}>&#9734;</span>;
       })}
     </>
   );

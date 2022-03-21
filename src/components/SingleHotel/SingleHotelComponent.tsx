@@ -37,13 +37,13 @@ const SingleHotel = (props: {
       <div className="roomsContainer">
         {rooms &&
           rooms[id].rooms.map((room) => {
-            const { name, occupancy, longDescription } = room;
+            const { id: roomId, name, occupancy, longDescription } = room;
             if (
               room.occupancy.maxAdults >= adultsAmount &&
               room.occupancy.maxChildren >= childrenAmount
             )
               return (
-                <div className="singleRoom">
+                <div key={roomId} className="singleRoom">
                   <div className="mainRoomInformation">
                     <div className="roomName">{name}</div>
                     <div>Adults: {occupancy.maxAdults}</div>
