@@ -7,6 +7,17 @@
   background-color: #a8dadc;
   color: black;
 }
+@media (max-width: 768px) {
+  .filtersContainer {
+    width: 100vw;
+  }
+  .amountFilter {
+    font-size: 16px !important;
+  }
+  .changeAmountButton {
+    display: none;
+  }
+}
 .amountFilter {
   display: flex;
   margin-left: 10px;

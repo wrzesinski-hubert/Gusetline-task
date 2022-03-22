@@ -11,6 +11,11 @@
   flex-direction: column;
   width: 50vw;
 }
+@media (max-width: 768px) {
+  .App {
+    width: 100vw;
+  }
+}
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.082);
