@@ -10,6 +10,7 @@
   align-items: center;
   flex-direction: column;
   width: 50vw;
+  transition: all 0.3s ease;
 }
 @media (max-width: 768px) {
   .App {
